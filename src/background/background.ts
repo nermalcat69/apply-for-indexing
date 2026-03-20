@@ -13,7 +13,7 @@ const DEFAULT_STATE: IndexingState = {
   isRunning: false,
 };
 
-const DELAY_BETWEEN_URLS_MS = 2000;
+const DELAY_BETWEEN_URLS_MS = 3000;
 const MAX_URLS = 100;
 
 async function getState(): Promise<IndexingState> {

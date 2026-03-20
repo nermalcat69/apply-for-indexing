@@ -5,7 +5,7 @@ var DEFAULT_STATE = {
   currentIndex: 0,
   isRunning: false
 };
-var DELAY_BETWEEN_URLS_MS = 2e3;
+var DELAY_BETWEEN_URLS_MS = 3e3;
 var MAX_URLS = 100;
 async function getState() {
   const result = await chrome.storage.local.get("indexingState");
