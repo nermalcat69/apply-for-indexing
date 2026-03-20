@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto Indexing for GSC</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header__icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="header__text">
+        <h1>Auto Indexing</h1>
+        <p>Google Search Console</p>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Sitemap Input -->
+      <section class="section">
+        <label class="label" for="sitemap-url">Sitemap URL</label>
+        <div class="input-group">
+          <input
+            type="url"
+            id="sitemap-url"
+            class="input"
+            placeholder="https://example.com/sitemap.xml"
+            autocomplete="url"
+            spellcheck="false"
+          />
+          <button id="fetch-btn" class="btn btn--secondary">Fetch</button>
+        </div>
+        <p id="fetch-status" class="fetch-status" aria-live="polite"></p>
+      </section>
+
+      <!-- Instructions -->
+      <div id="instructions" class="instructions">
+        <div class="instructions__icon">&#8505;&#65039;</div>
+        <p>After fetching, open Google Search Console in this browser, navigate to a property, then click Start.</p>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button id="start-btn" class="btn btn--primary" disabled>Start Indexing</button>
+        <button id="stop-btn" class="btn btn--danger" disabled>Stop</button>
+        <button id="clear-btn" class="btn btn--ghost">Clear</button>
+      </div>
+
+      <!-- Progress Section -->
+      <section id="status-section" class="status-section" style="display:none">
+        <div class="progress-header">
+          <span class="progress-label">Progress</span>
+          <span id="progress-text" class="progress-text">0 / 0</span>
+        </div>
+        <div class="progress-track">
+          <div id="progress-bar" class="progress-bar" style="width:0%"></div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__value" id="stat-submitted">0</span>
+            <span class="stat__label">Submitted</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" id="stat-indexed">0</span>
+            <span class="stat__label">Indexed</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" id="stat-errors">0</span>
+            <span class="stat__label">Errors</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" id="stat-pending">0</span>
+            <span class="stat__label">Pending</span>
+          </div>
+        </div>
+
+        <p id="current-url" class="current-url" style="display:none"></p>
+
+        <div class="log-header">
+          <span>Recent Activity</span>
+        </div>
+        <div id="url-list" class="url-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

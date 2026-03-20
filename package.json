@@ -1,0 +1,15 @@
+{
+  "name": "auto-indexing-gsc",
+  "version": "1.0.0",
+  "description": "Chrome extension to auto-submit sitemap URLs to Google Search Console for indexing",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "esbuild": "^0.21.5",
+    "typescript": "^5.4.5"
+  }
+}
